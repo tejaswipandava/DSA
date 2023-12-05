@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    println(Solution().maxSubarray(1, 75, intArrayOf(4)))
+    println()
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
