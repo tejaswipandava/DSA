@@ -1,4 +1,9 @@
-class Solution {
+/*
+Given an array B of length A with elements 1 or 0. Find the number of subarrays such that the bitwise OR of all the elements present in the subarray is 1.
+Note : The answer can be large. So, return type must be long.
+ */
+
+class subArrayWithBitWiseOR {
     fun solve(A: Int, B: IntArray): Long {
 
         var countZero = 0L
