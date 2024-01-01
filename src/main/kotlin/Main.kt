@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    var sol = Solution().longestPalindrome("a")
+    var sol = Solution().solve(intArrayOf(1,2), 2)
     println(sol)
 
     // Try adding program arguments via Run/Debug configuration.
