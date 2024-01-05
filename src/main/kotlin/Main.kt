@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    var sol = Solution().solve(4)
+    var sol = Solution().longestCommonPrefix(arrayOf("zz", "zzz", "zzzzz", "zzzzzzzzz", "z"))
     println(sol)
 
     // Try adding program arguments via Run/Debug configuration.
