@@ -37,4 +37,22 @@ class EquilibriumIndex {
 
         return -1
     }
+
+    fun equilibriumIndex(A: IntArray): Int {
+        var result = 0
+        for (i in 1..A.lastIndex) {
+            A[i] += A[i - 1]
+        }
+
+        var left = 0
+        var right = 0
+        for (i in 0..A.lastIndex) {
+            if (i == 0) left = 0 else left = A[i - 1]
+            if (i == A.lastIndex) right = 0 else right = A[A.lastIndex] - A[i]
+
+            if (left == right) return i
+        }
+
+        return -1
+    }
 }

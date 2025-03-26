@@ -12,7 +12,7 @@ o/p = 22
 //    RainWaterTrapped().presuffixtrap2(intArrayOf(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1))
 //}
 
-class RainWaterTrapped {
+class RainWaterTrappedReturns {
     fun presuffixtrap2(A: IntArray): Int {
 
         var arr = IntArray(A.size) { 0 }

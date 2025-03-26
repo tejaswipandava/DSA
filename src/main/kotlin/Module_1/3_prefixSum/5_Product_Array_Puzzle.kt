@@ -29,6 +29,24 @@ class ProductArrayPuzzle {
 
         return A
     }
+
+    fun arrayMultiply(A: IntArray): IntArray {
+        var pf = IntArray(A.size)
+        pf[0] = A[0]
+        for (i in 1..A.lastIndex) {
+            pf[i] = pf[i - 1] * A[i]
+        }
+
+        for (i in 0..A.lastIndex) {
+//            if (i == 0) A[i] = pf[A.lastIndex] / A[i]
+//            else if (i == A.lastIndex) A[i] = pf[A.lastIndex - 1]
+//            else A[i] = pf[A.lastIndex] / A[i]
+            A[i] = pf[A.lastIndex] / A[i]
+        }
+
+        return A
+    }
+
 }
 
 

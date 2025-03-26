@@ -37,6 +37,35 @@ The fifth argument given is the integer array E.
 
 
 class SubmatrixSumQueries {
+
+    fun subMatrixSumQueries(A: Array<IntArray>, B: IntArray, C: IntArray, D: IntArray, E: IntArray): IntArray {
+        var result = ArrayList<Int>()
+
+        var mod = (Math.pow(10.0, 9.0) + 7).toInt()
+        preFixMatrix(A)
+        for (i in 0..B.lastIndex) {
+            var sum = 0
+            var r1 = B[i] - 1
+            var c1 = C[i] - 1
+            var r2 = D[i] - 1
+            var c2 = E[i] - 1
+
+            var bottomRight = A[r2][c2]
+            var bottomLeft = if (c1 != 0) -A[r2][c1 - 1] else 0
+            var topright = if (r1 != 0) -A[r1 - 1][c2] else 0
+            var topleft = if (r1 != 0 && c1 != 0) A[r1 - 1][c1 - 1] else 0
+
+            sum = bottomLeft + bottomRight + topleft + topright
+
+            while (sum < 0) sum += mod
+            sum = sum % mod
+
+            result.add(sum)
+        }
+
+        return result.toIntArray()
+    }
+
     fun solve(A: Array<IntArray>, B: IntArray, C: IntArray, D: IntArray, E: IntArray): IntArray {
 
         var result = ArrayList<Int>()

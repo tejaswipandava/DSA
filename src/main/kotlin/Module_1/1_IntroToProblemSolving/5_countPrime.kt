@@ -1,10 +1,13 @@
 class CountPrime {
     fun solve(A: Int): Int {
-        var count = 0
-        for (i in 1..A) {
-            if (isPrime(i)) count++
-        }
-        return count
+//        var count = 0
+//        for (i in 1..A) {
+//            if (isPrime(i)) count++
+//        }
+//        return count
+
+        //Eratosthenes approach
+        return countPrimeNumber(A)
     }
 
     fun isPrime(A: Int): Boolean {
@@ -19,6 +22,31 @@ class CountPrime {
             else if (A % i == 0) count += 2
             i++
         }
+        return count
+    }
+
+    fun countPrimeNumber(num: Int): Int {
+        var nArray = BooleanArray(num + 1)
+
+        for (i in 2..num) {
+            var prime = i
+            var multiplier = 2
+            if (!nArray[i]) {
+                while (prime * multiplier <= num) {
+                    var value = (prime * multiplier)
+                    nArray[value] = true
+                    multiplier++
+                }
+            }
+        }
+
+        var count = 0
+        for (i in 2..num) {
+            if (!nArray[i]) {
+                count++
+            }
+        }
+
         return count
     }
 }
